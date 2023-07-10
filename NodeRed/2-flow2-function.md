@@ -26,22 +26,26 @@ El servidor no está configurado bajo logicas de producción.
 	- docker start $(docker ps -a -q)
 6. Abrir NodeRed
 	- http://localhost:1880
-7. [Tener instalado los nodos Dashboard](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/NodeRed/timestamp-con-NR.md)
+7. Tener instalado los [nodos Dashboard](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/NodeRed/timestamp-con-NR.md)
 
-## Instalación de nodos dashboard.
-
-1. Entrar a NodeRed
-2. Abrir Manage Palette, mismo que se encuentra en el menú de hamburguesa
-3. Seleccionar la pestaña install
-4. Buscar la palabra "dashsboard"
-    - Instalar los nodos node-red-dashboard
 
 ## [Flow 2: Nodo Function](https://edu.codigoiot.com/mod/lesson/view.php?id=3896&pageid=3821)
 
 1. Entrar a [localhost:1880](http://localhost:1880)
-2. Exportar el flow 1 haciendo clic en Menu > Exportar > Current Flow > JSON > formatted > download. Opcional, tomarlo del repositorio de clase anterior.
-3. Importar el flow 1 haciendo clic en Menu > Importar > Seleccionar un archivo para importar > Importar > Importar una copia
-4. Configurar el nodo function haciendo doble clic sobre el
+2. Exportar el flow 1 haciendo clic en:
+    
+    ~~~
+    Menu > Exportar > Current Flow > JSON > formatted > download.
+    ~~~ 
+    - Opcional, tomarlo del [repositorio.](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/NodeRed/Flows/flow1.json)
+3. Importar el flow 1 haciendo clic en: 
+
+    ~~~
+    Menu > Importar > Seleccionar un archivo para importar > Importar > Importar una copia
+    ~~~
+
+4. Configurar el nodo function haciendo doble clic sobre el.
+
 5. Agregar el codigo del [ejemplo ](https://edu.codigoiot.com/mod/lesson/view.php?id=3896&pageid=3824) a la pestaña On Message:
 ```
 // Lo que está después de "//" son comentarios 
@@ -56,17 +60,34 @@ return msg;
 6. Activar el nodo Debug y asegurarse de que el nodo inject este lanzando mensajes cada 5 segundos.
 7. Hacer clic en Deploy.
 
+## [Flow 3: Panel de control con Nodos Dashboard](https://edu.codigoiot.com/mod/lesson/view.php?id=3897)
+
+### Requisitos
+Contar con los nodos dashboard
+
+### Instrucciones
+
+1. Duplicar el flow 2 con las mecanicas de exportar e importar
+2. Renombrar el flow a Flow 3
+3. Agregar el nodo texto
+4. Crear una pestaña en la sección Dashboard
+5. Crear un grupo
+6. Configurar el nodo texto para que se visualice en el grupo recien creado
+7. Hacer clic en Deploy y consultar el [Dashboard](http://localhost:1880/ui)
+
+
+
 ## Referencias
 
 - [NodeRed 2022](https://edu.codigoiot.com/course/view.php?id=278)
 
 - [NodeRed](https://nodered.org/)
 
-- [NodeRed Docker](https://nodered.org/docs/getting-started/docker)
+- [NodeRed en Docker](https://nodered.org/docs/getting-started/docker)
 
-- [Documentación de NodeRed](https://nodered.org/docs/user-guide/nodes)
+- Documentación de [NodeRed](https://nodered.org/docs/user-guide/nodes)
 
-- - Documentacion [toString](https://nodejs.org/api/buffer.html#buftostringencoding-start-end)
+- Documentacion [toString](https://nodejs.org/api/buffer.html#buftostringencoding-start-end)
 
 ## Notas
 
@@ -76,10 +97,18 @@ return msg;
 - Para cambiar el nombre de un flow hacer doble clic en la pestaña y cambiar el nombre
 - Los nodos con un triangulo anaranjado no están configurados
 
-# Resultados
+
+## Resultados
 - Flow 2: Ejercicio Nodo Function.
 
-![](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/img/flow1-1.png)
+![](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/img/flow2-1.png)
 
-![](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/img/flow1-2.png)
+![](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/img/flow2-2.png)
 
+- Flow 3: Panel de control con nodos Dashboard.
+
+![](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/img/flow3-1.png)
+
+![](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/img/flow3-2.png)
+
+![](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/img/flow3-3.png)
