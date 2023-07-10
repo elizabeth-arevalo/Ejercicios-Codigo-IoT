@@ -26,7 +26,7 @@ El servidor no está configurado bajo logicas de producción.
 	- docker start $(docker ps -a -q)
 6. Abrir NodeRed
 	- http://localhost:1880
-7. Tener instalado los [nodos Dashboard](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/NodeRed/timestamp-con-NR.md)
+7. Tener instalado los [nodos Dashboard](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/NodeRed/1-timestamp-con-NR.md)
 
 
 ## [Flow 2: Nodo Function](https://edu.codigoiot.com/mod/lesson/view.php?id=3896&pageid=3821)
