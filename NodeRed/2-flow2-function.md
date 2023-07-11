@@ -75,6 +75,49 @@ Contar con los nodos dashboard
 6. Configurar el nodo texto para que se visualice en el grupo recien creado
 7. Hacer clic en Deploy y consultar el [Dashboard](http://localhost:1880/ui)
 
+## [Flow4: Estación climatica distribuida](https://edu.codigoiot.com/mod/lesson/view.php?id=3899)
+
+### Requisitos
+
+- Tener funcionando NodeRed
+
+## Instrucciones
+
+1. Crear un nuevo flow
+2. Agregar un nodo mqtt
+	- Agregar un nuevo broker y agregar únicamente la url con el siguiente comando:
+    ~~~
+    nslookup broker.hivemq.com
+    ~~~
+	- localhost (mosquitto)
+	- Tema: codigoIoT/mqtt/clima
+	- Output: a String
+3. Agregar un nodo JSON. Siempre convertir a JavaScript Object
+4. Agregar dos nodos function
+
+Nodo function temperatura
+~~~
+msg.payload = msg.payload.temp;
+msg.topic = "Temperatura";
+return msg;
+~~~
+Nodo function humedad
+~~~
+msg.payload = msg.payload.hum;
+msg.topic = "Humedad";
+return msg;
+~~~
+
+5. Crear una pestaña y dos grupos de informacion
+- Pestaña: Clima local
+- Grupo1: Indicadores
+- Grupo2: Gráclksfica
+6. Agregar 2 nodos gauge y configurarlos
+- Asociarlos al grupo indicadores
+- Determine etiquetas y rangos
+7. Agregar el nodo chart
+- Asociarlos al grupo indicadores
+
 
 
 ## Referencias
@@ -92,7 +135,6 @@ Contar con los nodos dashboard
 ## Notas
 
 - El icono azul en los nodos indica que esos nodos no estan desplegados
-- Formas de poner texto en codigo en markdown
 - Para desactivar un flow hacer clic en la pestaña del flow, hacer clic en el boton disable, clic en done y clic en deploy
 - Para cambiar el nombre de un flow hacer doble clic en la pestaña y cambiar el nombre
 - Los nodos con un triangulo anaranjado no están configurados
