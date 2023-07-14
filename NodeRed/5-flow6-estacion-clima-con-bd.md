@@ -64,14 +64,20 @@ lon= -99.133472
 	CREATE USER 'usuario'@'%' IDENTIFIED BY 'password';
 	GRANT ALL PRIVILEGES ON *.* TO 'usuario'@'%';
 	```
-	
+
+	- Para poder iniciar sesión con el nuevo usuario por medio de Docker Compose, se usa el siguiente comando: 
+
+    ~~~
+    docker exec -it [id_contenedor] mysql -u [usuario] -p
+    ~~~
+
 4. Configurar el flow recien importado
 
     - Nodo MQTT Local debe estar conectado al broker local y que la salida sea string
 
     - Configurar la interfaz de los nodos dashboard
         
-    - El nodo injet de la sección API debe funcionar cada minot
+    - El nodo injet de la sección API debe funcionar cada mínuto
 
     - Cofigurar correctamente la solicitud API del nodo http request
 
@@ -81,6 +87,12 @@ lon= -99.133472
 
 5. Asegurarse de que los nodos MQTT de la seccion Enviador y Escuchador usan el broker público. 
     
+    - Para obtenerlo, puedes usar el siguente comando:
+
+    ~~~
+    nslookup broker.mq.com
+    ~~~
+
     - Tema: codigoIoT/mqtt/climaAPI
     - Server: 52.57.47.134
 
@@ -112,3 +124,8 @@ lon= -99.133472
 
 ## Resultados
 
+![](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/img/clima-conbd1-1.png)
+
+![](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/img/clima-conbd1-2.png)
+
+![](https://github.com/elizabeth-arevalo/Ejercicios-Codigo-IoT/blob/main/img/clima-conbd1-3.png)
